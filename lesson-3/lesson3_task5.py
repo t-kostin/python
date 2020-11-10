@@ -21,4 +21,4 @@ while no_stop:
         index = len(user_list)
     for i in range(0, index):
         total_sum += int(user_list[i])
-print('Сумма всех введенных чисел равна:', total_sum)
+    print('Сумма введенных чисел равна:', total_sum)
