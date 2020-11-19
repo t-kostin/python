@@ -13,10 +13,7 @@ def get_hours(arg):
 
 result = {}
 with open('lesson5_task6.txt', 'r', encoding='utf-8') as source_file:
-    while True:
-        input_string = source_file.readline()
-        if not input_string:
-            break
+    for input_string in source_file:
         subject = input_string.split(':')
         hours = list(map(get_hours, subject[1].split()))
         result.update({subject[0]: sum(hours)})

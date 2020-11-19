@@ -14,10 +14,7 @@ gross_profit = 0
 company_count = 0
 companies = {}
 with open('lesson5_task7-1.txt', 'r', encoding='utf-8') as source_file:
-    while True:
-        source_line = source_file.readline()
-        if not source_line:
-            break
+    for source_line in source_file:
         source_list = source_line.split()
         profit = int(source_list[-2]) - int(source_list[-1])
         if profit >= 0:

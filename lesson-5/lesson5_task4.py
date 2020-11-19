@@ -12,10 +12,7 @@ translate = dict(One='Один', Two='Два', Three='Три', Four='Четыр�
 source_file = open('lesson5_task4-1.txt', 'r', encoding='utf-8')
 target_file = open('lesson5_task4-2.txt', 'w', encoding='utf-8')
 
-while True:
-    current_line = source_file.readline()
-    if not current_line:
-        break
+for current_line in source_file:
     current_record = current_line.split()
     current_record[0] = translate[current_record[0]]
     result_line = ' '.join(current_record) + '\n'

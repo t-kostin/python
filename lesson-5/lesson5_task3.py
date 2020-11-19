@@ -5,10 +5,7 @@
 staff_number = 0
 gross_salary = 0
 with open('lesson5_task3.txt', 'r', encoding='utf-8') as user_file:
-    while True:
-        file_line = user_file.readline()
-        if not file_line:
-            break
+    for file_line in user_file:
         staff_number += 1
         staff_record = file_line.split()
         staff_record[1] = int(staff_record[1])
