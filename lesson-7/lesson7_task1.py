@@ -57,10 +57,10 @@ class Matrix:
         if first_dim != second_dim:
             raise MatrixArgError('Matrices dimensions is not equal', first_dim, second_dim)
         result_mtx = []
-        for i in range(0, first_dim[0]):
+        for line_1, line_2 in zip(self.mtx, other.mtx):
             result_line = []
-            for j in range(0, first_dim[1]):
-                result_line.append(self.mtx[i][j] + other.mtx[i][j])
+            for elem_1, elem_2 in zip(line_1, line_2):
+                result_line.append(elem_1 + elem_2)
             result_mtx.append(result_line)
         return Matrix(result_mtx)
 
