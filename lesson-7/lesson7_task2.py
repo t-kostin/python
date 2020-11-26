@@ -14,7 +14,6 @@
 
 from abc import ABC, abstractmethod
 
-
 class Clothing(ABC):
     def __init__(self, title):
         self.title = title
@@ -47,6 +46,10 @@ class Suit(Clothing):
         return self.height * 2 + 0.3
 
 
+def total_cloth_consumption(*args):
+    return sum(map(lambda a: a.cloth_consumption, args))
+
+
 first_suit = Suit('Armani', 1.82)
 second_suit = Suit('Dolce Gabbana', 1.85)
 coat = Coat('Gucci', 18)
@@ -54,3 +57,4 @@ coat = Coat('Gucci', 18)
 print(f'Расход ткани на костюм {first_suit} (рост {first_suit.height} м) составит {first_suit.cloth_consumption}.')
 print(f'Расход ткани на костюм {second_suit} (рост {second_suit.height} м) составит {second_suit.cloth_consumption}.')
 print(f'Расход ткани на пальто {coat} (размер {coat.size}) составит {coat.cloth_consumption}.')
+print(total_cloth_consumption(first_suit, second_suit, coat))
